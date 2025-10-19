@@ -1,0 +1,25 @@
+[Unit]
+Description=Secure MQTT Shell Server
+After=network.target network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/mqtt-shell
+EnvironmentFile=/opt/mqtt-shell/.env
+ExecStart=/opt/mqtt-shell/mqtt-shell-server
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/run
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # MQTT Broker (optional - for testing)
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: mqtt-broker
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./compose/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mosquitto-data:/mosquitto/data
+      - mosquitto-logs:/mosquitto/log
+    restart: unless-stopped
+
+  # Server (runs on remote system)
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: mqtt-shell-server
+    environment:
+      - MQTT_BROKER_URL=${MQTT_BROKER_URL:-tcp://mosquitto:1883}
+      - MQTT_TOPIC_PREFIX=${MQTT_TOPIC_PREFIX:-mqtt-shell}
+      - EXEC_KEY=${EXEC_KEY}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+    depends_on:
+      - mosquitto
+
+  # Client (optional - for testing, usually run locally)
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: mqtt-shell-client
+    environment:
+      - MQTT_BROKER_URL=${MQTT_BROKER_URL:-tcp://mosquitto:1883}
+      - MQTT_TOPIC_PREFIX=${MQTT_TOPIC_PREFIX:-mqtt-shell}
+      - EXEC_KEY=${EXEC_KEY}
+    stdin_open: true
+    tty: true
+    depends_on:
+      - mosquitto
+      - server
+    profiles:
+      - client  # Only starts when explicitly requested
+
+volumes:
+  mosquitto-data:
+  mosquitto-logs:
